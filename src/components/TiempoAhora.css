@@ -1,0 +1,51 @@
+.tiempoA{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem auto;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem;
+
+}
+
+.estado{
+    display: flex;
+}
+
+.temperatura{
+    font-size: 4rem;
+}
+
+.data-fecha{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Computador */
+@media (min-width: 768px){
+    .tiempoA{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        margin: 2.5rem auto;
+        width: 80%;
+        background-color: white;
+        border-radius: 20px;
+        padding: 0rem;
+    
+    }
+    
+    .estado{
+        display: flex;
+    }
+    
+    .temperatura{
+        font-size: 4rem;
+    }
+    
+}

@@ -1,0 +1,68 @@
+.tiempoO{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem auto;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem;
+
+}
+
+.detalle{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    border-bottom: 1px black solid;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detalle:last-child{
+    border-bottom: none;
+}
+
+.detalle-a{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.img-detalle{
+    max-width: 80px;
+    width: 25%;
+}
+
+.detalle-a .uv{
+    max-width: 400px;
+    width: 20%;
+}
+
+/* Cambio color UV */
+.uv-verde{
+    color: green;
+    font-weight: bold;
+}
+
+.uv-amarillo{
+    color: yellow;
+    font-weight: bold;
+}
+
+.uv-rojo{
+    color: red;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* Computador */
+@media (min-width: 768px){
+
+}
