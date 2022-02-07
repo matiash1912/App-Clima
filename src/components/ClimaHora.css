@@ -1,0 +1,17 @@
+.tiempoH{
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 2rem !important;
+}
+
+.detallesTiempoH{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+/* Computador */
+@media (min-width: 768px){
+
+}

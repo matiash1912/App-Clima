@@ -1,6 +1,5 @@
 .tiempoA{
     display: flex;
-    position: relative;
     flex-direction: column;
     align-items: center;
     margin: 2.5rem auto;
@@ -13,10 +12,15 @@
 
 .estado{
     display: flex;
+    justify-content: center;
+    max-width: 250px;
+    width: 30%;
+    gap: 1rem;
 }
 
 .temperatura{
-    font-size: 4rem;
+    font-size: 3rem;
+
 }
 
 .data-fecha{

@@ -21,6 +21,11 @@
     gap: 1rem;
 }
 
+.detalle p {
+    font-size: 0.8rem;
+    
+}
+
 .detalle:last-child{
     border-bottom: none;
 }
@@ -29,6 +34,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    width: 60%;
 }
 
 .img-detalle{
@@ -57,12 +63,20 @@
     font-weight: bold;
 }
 
-
-
+/* Tablet */
+@media (min-width: 550px){
+    .detalle p {
+        font-size: 1rem;
+    }
+    
+}
 
 
 
 /* Computador */
 @media (min-width: 768px){
-
+    .detalle p {
+        font-size: 1.5rem;
+    }
+    
 }

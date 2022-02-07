@@ -91,6 +91,15 @@ img {
     padding-bottom: 1rem;
 }
 
+.block-line {
+    border-bottom: 1px orange solid ;
+}
+
+.display-none{
+    display: none;
+}
+
 @import "./components/Header.css";
 @import "./components/TiempoAhora.css";
-@import "./components/TiempoOtros.css"
+@import "./components/TiempoOtros.css";
+@import "./components/ClimaHora.css";

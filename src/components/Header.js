@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Header = () => {
     
@@ -12,7 +13,7 @@ const Header = () => {
 
         const menu = document.createElement("DIV")
         menu.classList.add("menu")
-        menu.innerHTML = "<a href=\"# \">Hoy</a><a href=\"# \">Cada Hora</a><a href=\"# \">Diario</a>"
+        menu.innerHTML = "<a href=\"/ \">Hoy</a><a href=\"/cada-hora \">Cada Hora</a><a href=\"/diario \">Diario</a>"
 
         const selectHeader = document.querySelector(".header")
         const selectMenu = document.querySelector(".menu")
@@ -36,9 +37,9 @@ const Header = () => {
                     <rect y="60" width="100" height="15"></rect>
                 </svg>
                 <nav>
-                    <a href="# ">Hoy</a>
-                    <a href="# ">Cada Hora</a>
-                    <a href="# ">Diario</a>
+                    <Link to="/">Hoy</Link>
+                    <Link to="/cada-hora">Cada Hora</Link>
+                    <Link to="/diario">Diario</Link>
                 </nav>
             </div>
         </div>

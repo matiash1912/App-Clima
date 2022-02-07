@@ -1,17 +1,18 @@
 
+
 import { useEffect, useState } from "react";
 import sunnySVG from "../images/soleado.svg"
 import parcialSVG from "../images/parcial.svg"
 import nubladoSVG from "../images/nublado.svg"
 import nocheDespejadoSVG from "../images/noche-despejado.svg"
 
-const TiempoAhora = () => {    
+const TiempoTomorrow = () => {    
     const [tiempo, setTiempo] = useState("")
 
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await fetch("https://api.weatherapi.com/v1/current.json?key=9dab7e7803d44d69a1d03812220302&q=Santiago&aqi=no", 
+                const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=9dab7e7803d44d69a1d03812220302&q=Santiago&days=2&aqi=no&alerts=no", 
                 {
                     method: 'GET',
                     mode: 'cors'})
@@ -26,25 +27,19 @@ const TiempoAhora = () => {
     }, []);
 
     const datosGeo =  tiempo.location
-    const datosTiempo = tiempo.current
+    const datosTiempo = tiempo.forecast?.forecastday
 
     if(datosTiempo === undefined){
         return <h4>Cargando...</h4>
     }
 
-    const getDate = new Date()
-    const fechaActual = getDate.toLocaleDateString()
-    let horaActual = `${getDate.getHours()}:${getDate.getMinutes()}`
 
-    if(getDate.getMinutes() <= 9){
-        horaActual = `${getDate.getHours()}:0${getDate.getMinutes()}`
+    const climaTomorrow = datosTiempo?.[1].day?.condition?.text
+    const getTempTomorrow = datosTiempo?.[1].day?.maxtemp_c
 
-    }
+    const tempTomorrow = parseInt(getTempTomorrow)
 
-    const climaActual = datosTiempo?.condition?.text
-    const tempActual = datosTiempo?.temp_c
-
-    const tomarClima= [climaActual]
+    const tomarClima= [climaTomorrow]
     
     const imagenClima = () => {
         if(tomarClima.includes("Sunny")){
@@ -57,6 +52,8 @@ const TiempoAhora = () => {
             return nubladoSVG
         }
     }
+
+    // Traducir Clima
     const clima = () => {
         if(tomarClima.includes("Sunny")){
             return "Soleado"
@@ -67,7 +64,7 @@ const TiempoAhora = () => {
         }else if(tomarClima.includes("Cloudy")){
             return "Nublado"
         }else {
-            return climaActual
+            return tomarClima.values
         }
     }
 
@@ -76,15 +73,12 @@ const TiempoAhora = () => {
     return(
         <div className="tiempoA">
             <div className="titulo-line">
-             <h4>El Tiempo Ahora</h4>
+             <h4>Mañana</h4>
             </div>
-            <div className="data-fecha">
-                <p>{horaActual}</p>
-                <p>{fechaActual}</p>
-            </div>
+            <p>Max</p>
             <div className="estado block-line">
                 <img height="120px" src={imagenClima()}></img>
-                <p className="temperatura" >{`${tempActual}°C`}</p>
+                <p className="temperatura" >{`${tempTomorrow}°C`}</p>
             </div>
             <p>{clima()}</p>
             <p>{datosGeo ? `${datosGeo.name}, ${datosGeo.region}` : null}</p>
@@ -92,4 +86,4 @@ const TiempoAhora = () => {
     )
 }
 
-export default TiempoAhora;
+export default TiempoTomorrow;

@@ -3,6 +3,7 @@ import compassSVG from "../images/compass.svg"
 import windSVG from "../images/wind.svg"
 import waterSVG from "../images/water.svg"
 import uvSVG from "../images/uv.svg"
+import precipSVG from "../images/precip.svg"
 
 
 const TiempoOtros = () => {    
@@ -36,25 +37,26 @@ const TiempoOtros = () => {
     const speedWind = `${datosTiempo?.wind_kph}Km/H`
     const humedad = `${datosTiempo?.humidity}%`
     const uv = datosTiempo?.uv
+    const precip = datosTiempo?.precip_in
     
     const windD = [dirWind]
 
     const calculoWind = () => {
-        if(windD.includes("N")){
+        if(windD.includes("N") || windD.includes("North")){
             return "Norte"
-        } else if(windD.includes("S")){
+        } else if(windD.includes("S") || windD.includes("South")){
             return "Sur"
-        }else if(windD.includes("E")){
+        }else if(windD.includes("E") || windD.includes("East")){
             return "Este"
-        }else if(windD.includes("W")){
-            return "West"
-        }else if(windD.includes("NW ") || windD.includes("NNW")){
+        }else if(windD.includes("W") || windD.includes("West")){
+            return "Oeste"
+        }else if(windD.includes("NW") || windD.includes("NNW") || windD.includes("WNW")){
             return "Noroeste"
-        }else if(windD.includes("NE ") || windD.includes("NNE")){
+        }else if(windD.includes("NE") || windD.includes("NNE") || windD.includes("ENE")){
             return "Noreste"
-        }else if(windD.includes("SW ") || windD.includes("SSW")){
+        }else if(windD.includes("SW") || windD.includes("SSW") || windD.includes("WSW")){
             return "Suroeste"
-        }else if(windD.includes("SE ") || windD.includes("SSE")){
+        }else if(windD.includes("SE") || windD.includes("SSE") || windD.includes("ESE")){
             return "Sureste"
         }
     }
@@ -109,6 +111,15 @@ const TiempoOtros = () => {
                 </div>
                 <div className="detalle-b">
                     <p>{uv}</p>
+                </div>
+            </div>
+            <div className="detalle">
+                <div className="detalle-a">
+                    <img className="img-detalle" src={precipSVG}></img>
+                    <p>Precipitaciones</p>
+                </div>
+                <div className="detalle-b">
+                    <p>{precip}%</p>
                 </div>
             </div>
         </div>
