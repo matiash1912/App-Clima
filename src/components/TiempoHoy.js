@@ -11,7 +11,7 @@ const TiempoHoy = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=9dab7e7803d44d69a1d03812220302&q=Santiago&days=2&aqi=no&alerts=no", 
+                const response = await fetch("https://api.weatherapi.com/v1/forecast.json?key=9dab7e7803d44d69a1d03812220302&q=Santiago&days=2&aqi=no&alerts=no", 
                 {
                     method: 'GET',
                     mode: 'cors'})
