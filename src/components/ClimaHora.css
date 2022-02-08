@@ -1,17 +1,32 @@
 .tiempoH{
     background-color: white;
     border-radius: 20px;
-    margin-top: 2rem !important;
+    margin: 2rem auto !important;
+    width: 90%;
 }
 
 .detallesTiempoH{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1rem;
+    margin: 0 1.5rem;
 }
+
+.detallesTiempoH .state {
+    max-width: 80px;
+    width: 9%;
+}
+
+.precip{
+    display: flex;
+    gap: 0.5rem;
+}
+
 
 /* Computador */
 @media (min-width: 768px){
-
+    .drop{
+        width: 20px
+     }
+     
 }
