@@ -69,7 +69,7 @@ const ClimaHora = () => {
             <div key={i} className="tiempoH" >
                 <div className="detallesTiempoH" >
                     <p>{[i]}</p>
-                    <img className="state" src={getImagen(getClimaHoras?.[i].condition?.text)}></img>
+                    <img  alt="weather"className="state" src={getImagen(getClimaHoras?.[i].condition?.text)}></img>
                     <p>{`${getClimaHoras?.[i].temp_c}°C`}</p>
                     <p>{getEstado(getClimaHoras?.[i].condition?.text)}</p>
                     <div className="precip" >
