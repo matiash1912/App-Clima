@@ -13,7 +13,7 @@ const Header = () => {
 
         const menu = document.createElement("DIV")
         menu.classList.add("menu")
-        menu.innerHTML = "<a href=\"/ \">Hoy</a><a href=\"/cada-hora \">Cada Hora</a><a href=\"/diario \">Diario</a>"
+        menu.innerHTML = "<a href=\"/ \">Hoy</a><a href=\"/cada-hora \">Cada Hora</a><a href=\"/diario \">Esta Semana</a>"
 
         const selectHeader = document.querySelector(".header")
         const selectMenu = document.querySelector(".menu")
@@ -39,7 +39,7 @@ const Header = () => {
                 <nav>
                     <Link to="/">Hoy</Link>
                     <Link to="/cada-hora">Cada Hora</Link>
-                    <Link to="/diario">Diario</Link>
+                    <Link to="/diario">Esta Semana</Link>
                 </nav>
             </div>
         </div>

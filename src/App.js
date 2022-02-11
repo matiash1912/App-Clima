@@ -6,6 +6,7 @@ import TiempoOtros from './components/TiempoOtros'
 import TiempoHoy from './components/TiempoHoy'
 import TiempoTomorrow from './components/TiempoTomorrow'
 import ClimaHora from './components/ClimaHora'
+import ClimaDia from "./components/ClimaDia";
 
 const Hoy = () => {
   return(
@@ -28,7 +29,10 @@ const CadaHora = () => {
 
 const Diario = () => {
   return(
-    <div>Diario</div>
+    <div>
+      <ClimaDia/>
+      <TiempoAhora/>
+    </div>
   )
 }
 
@@ -42,7 +46,6 @@ function App() {
         <Route path="/diario" element={<Diario/>}/>
         <Route path="/" element={<Hoy/>}/>
       </Routes>
- 
       <Footer/>
     </div>
 
